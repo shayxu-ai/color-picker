@@ -7,6 +7,5 @@ Python3
 tkinter  
 pillow  
 
-## 求打赏[支付宝]
+## 江湖救急[支付宝]
 <img src="https://github.com/shayxu-ai/shayxu-ai.github.io/blob/master/images/alipay.jpg?raw=true" width="150">
-<p>P.S. 谁知道我支付宝头像是哪位演员
