@@ -6,6 +6,3 @@ GUI的编写还挺有意思的。
 Python3  
 tkinter  
 pillow  
-
-## 江湖救急[支付宝]
-<img src="https://github.com/shayxu-ai/shayxu-ai.github.io/blob/master/images/alipay.jpg?raw=true" width="150">
