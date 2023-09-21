@@ -18,22 +18,21 @@ class ColorPicker:
     def __init__(self, root):
 
         root.title("屏幕取色")
-
-        mainframe = ttk.Frame(root, padding="3 3 12 12")
-        mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
         root.columnconfigure(0, weight=1)
         root.rowconfigure(0, weight=1)
+
+        mainframe = ttk.Frame(root, borderwidth=5, padding="3 3 12 12")
+        mainframe.grid(column=0, row=0, columnspan=3, rowspan=2, sticky=(N, S, E, W))
+
        
-        self.feet = StringVar()
-        feet_entry = ttk.Entry(mainframe, width=7, textvariable=self.feet)
-        feet_entry.grid(column=2, row=1, sticky=(W, E))
-        self.meters = StringVar()
-
         # 色块，显示当前像素的颜色
-        ttk.Label(mainframe, ).grid(column=2, row=2, sticky=(W, E))
+        ttk.Label(mainframe).grid(column=4, row=2)
 
-        ttk.Button(mainframe, text="选取", command=None).grid(column=4, row=3, sticky=W)
-        ttk.Button(mainframe, text="退出", command=None).grid(column=3, row=3, sticky=W)
+        ttk.Button(mainframe, text="选取", command=None).grid(column=3, row=3, columnspan=3)
+        ttk.Button(mainframe, text="退出", command=root.destroy).grid(column=5, row=3, columnspan=3)
+
+
+
 
 
 
