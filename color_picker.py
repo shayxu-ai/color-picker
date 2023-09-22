@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @CreateDate: 2023/09/21 Thu 16:14
+# @CreateDate: 2023/09/22 Fri 15:34
 # @Author: ShayXU
 # @Filename: color_picker.py
 
@@ -13,25 +13,41 @@
 from tkinter import *
 from tkinter import ttk
 
+
 class ColorPicker:
 
     def __init__(self, root):
-
+        style = ttk.Style()
         root.title("屏幕取色")
-        root.columnconfigure(0, weight=1)
-        root.rowconfigure(0, weight=1)
 
-        mainframe = ttk.Frame(root, borderwidth=5, padding="3 3 12 12")
-        mainframe.grid(column=0, row=0, columnspan=3, rowspan=2, sticky=(N, S, E, W))
+
+        # 获取屏幕宽度和高度
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        # 计算窗口的中心点坐标
+        center_x = int(screen_width / 2)
+        center_y = int(screen_height / 2)
+        # 将窗口移动至中心点位置
+        root.geometry("+{}+{}".format(center_x, center_y))
+        root.geometry("300x200")
+
+        mainframe = ttk.Frame(root, borderwidth=5, padding=(10,10,10,10), relief="ridge")
+        mainframe.grid(column=0, row=0, sticky='nsew')
 
        
         # 色块，显示当前像素的颜色
-        ttk.Label(mainframe).grid(column=4, row=2)
+        color_block = ttk.Label(mainframe, background='white', width=10)
+        button1 = ttk.Button(mainframe, text="选取", command=None)
+        button2 = ttk.Button(mainframe, text="退出", command=root.destroy)
 
-        ttk.Button(mainframe, text="选取", command=None).grid(column=3, row=3, columnspan=3)
-        ttk.Button(mainframe, text="退出", command=root.destroy).grid(column=5, row=3, columnspan=3)
+        color_block.grid(column=4, row=2, sticky='nsew')
+        button1.grid(column=2, row=3, sticky='nsew')
+        button2.grid(column=6, row=3, sticky='nsew')
 
-
+        root.columnconfigure(0, weight=1)
+        root.rowconfigure(0, weight=1)
+        mainframe.columnconfigure(0, weight=1)
+        mainframe.rowconfigure(0, weight=1)
 
 
 

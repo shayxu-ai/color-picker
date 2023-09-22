@@ -2,9 +2,14 @@ from tkinter import *
 from tkinter import ttk
 
 root = Tk()
+style = ttk.Style()
 
 content = ttk.Frame(root, padding=(10,10,10,10))
-frame = ttk.Frame(content, borderwidth=5, relief="ridge", width=200, height=100)
+
+style.configure("BW.TLabel", foreground="black", background="red")
+frame = ttk.Frame(content, borderwidth=5, relief="ridge", style="BW.TLabel", width=200, height=100)
+
+
 namelbl = ttk.Label(content, text="Name")
 name = ttk.Entry(content)
 
